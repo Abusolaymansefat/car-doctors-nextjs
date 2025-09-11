@@ -1,9 +1,11 @@
 import dbConnect from "@/lib/dbConnect";
 import Image from "next/image";
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
 import React from "react";
 
 export default async function Services() {
-  const serviceCollection = await dbConnect("car-doctor"); 
+  const serviceCollection = await dbConnect("car-doctor");
   const data = await serviceCollection.find({}).toArray();
 
   return (
@@ -31,9 +33,17 @@ export default async function Services() {
               className="rounded-xl w-full object-cover"
             />
             <h2 className="font-bold text-2xl mt-4">{item.title}</h2>
-            <p className="text-[#FF3811] font-semibold mt-2">
+            <p className="text-[#685c5a] font-semibold mt-2">
               Price: ${item.price}
             </p>
+
+            {/* Link inside card */}
+            <Link
+              href={`/services/${item._id}`}
+              className="text-orange-500 text-xl inline-flex items-center gap-1 mt-2"
+            >
+              View Details <FaArrowRight />
+            </Link>
           </div>
         ))}
       </div>
