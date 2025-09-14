@@ -9,24 +9,24 @@ export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navMenu = (
-  <>
-    <li>
-      <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-    </li>
-    <li>
-      <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
-    </li>
-    <li>
-      <Link href="/service" onClick={() => setMobileMenuOpen(false)}>Service</Link>
-    </li>
-    <li>
-      <Link href="/bolg" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
-    </li>
-    <li>
-      <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact </Link>
-    </li>
-  </>
-    );
+    <>
+      <li>
+        <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+      </li>
+      <li>
+        <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
+      </li>
+      <li>
+        <Link href="/service" onClick={() => setMobileMenuOpen(false)}>Service</Link>
+      </li>
+      <li>
+        <Link href="/bolg" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
+      </li>
+      <li>
+        <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact </Link>
+      </li>
+    </>
+  );
   useEffect(() => {
     if (typeof window !== "undefined") {
       const savedTheme = localStorage.getItem("theme") || "light";
@@ -49,7 +49,7 @@ export default function NavBar() {
       {/* Navbar Start */}
       <div className="navbar-start">
         <Link href={"/"} className=" text-xl">
-          <Image src={"/assets/logo.svg"} width={107} height={87} />
+          <Image src={"/assets/logo.svg"} width={87} height={60} className="w-auto h-15" alt="Car Doctor Logo" />
         </Link>
       </div>
 
